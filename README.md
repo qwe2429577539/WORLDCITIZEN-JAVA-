@@ -16,11 +16,11 @@
    - CompletionService
    - log4j+slf4j日志
    
-- 实现的功能
-   - 登录注销
-   - 课堂同学展示/记录
-   - 同学聊天
-   - 论坛功能
+- Features
+   - Log in / Log out
+   - Visulaztion of students with different nationality and enrolled courses
+   - Chatting
+   - Forum
 
 
 
