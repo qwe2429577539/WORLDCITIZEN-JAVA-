@@ -1,8 +1,13 @@
+/**
+ * homepage
+ */
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/views/notice.dart';
+import 'package:flutter_application_1/mainpage/notice.dart';
 import 'package:flutter_application_1/_routing/router.dart';
 import 'package:flutter_application_1/_routing/routes.dart';
-import 'package:flutter_application_1/HomePageWidget/FriendsWidget.dart';
+import 'package:flutter_application_1/Userdata/Homepage_friends_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -122,7 +127,7 @@ class _HomePage extends State<HomePage> {
                       alignment: Alignment.center,
                       child: IconButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, noticeViewRoute);
+                          Navigator.pushNamed(context, joinCourseMainViewRoute);
                         },
                         icon: const Icon(Icons.add),
                       ),

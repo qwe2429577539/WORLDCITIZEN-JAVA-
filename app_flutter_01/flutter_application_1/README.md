@@ -4,13 +4,11 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+所有一级主页面位于mainpage文件夹内
+routing文件夹配置了路由功能，新增路由在文件夹内两个文件中都要配置，router配置了路由buil哪个page，routers配置路由节点名称勿在此文件夹新增其他无关文件
 
-A few resources to get you started if this is your first Flutter project:
+所有子页面（二级页面）在subpage文件夹内施工
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+展示数据建议剥离成单独的class 存放与Userdata文件夹下
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+一些组件例如弹窗等建议抽离成组件，放置在components文件夹的子文件夹中，例如homepage组件放置在components/homepage_components下

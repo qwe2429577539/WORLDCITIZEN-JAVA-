@@ -1,9 +1,12 @@
+/**
+ * 界面路由设置，App导航栏
+ */
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/views/channel.dart';
-import 'package:flutter_application_1/views/chat.dart';
-import 'package:flutter_application_1/views/notice.dart';
-import 'package:flutter_application_1/views/profile.dart';
-import 'package:flutter_application_1/views/home.dart';
+import 'package:flutter_application_1/mainpage/channel.dart';
+import 'package:flutter_application_1/mainpage/chat.dart';
+import 'package:flutter_application_1/mainpage/notice.dart';
+import 'package:flutter_application_1/mainpage/profile.dart';
+import 'package:flutter_application_1/mainpage/home.dart';
 
 /**
  * 主页导航栏（完工）

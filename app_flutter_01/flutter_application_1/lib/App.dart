@@ -1,3 +1,8 @@
+ /**
+ * app运行设置，不需要改动
+ */
+ 
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/_routing/routes.dart';
 import 'package:flutter_application_1/_routing/router.dart' as router;
