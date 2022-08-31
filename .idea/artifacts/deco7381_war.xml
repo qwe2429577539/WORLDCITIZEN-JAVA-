@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="deco7381:war">
+    <output-path>$PROJECT_DIR$/deco7381/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>deco7381</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="deco7381-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="deco7381:war exploded" />
+    </root>
+  </artifact>
+</component>
