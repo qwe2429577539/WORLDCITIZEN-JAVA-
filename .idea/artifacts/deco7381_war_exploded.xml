@@ -28,6 +28,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.3.22" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.22" />
           <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.30" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.36" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:2.7.3" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-json:2.7.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.3" />
@@ -67,23 +68,11 @@
           <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt:0.9.1" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.3" />
           <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.0" />
           <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.3.0" />
           <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-core:2.3.0" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1.1" />
-          <element id="library" level="project" name="Maven: com.corundumstudio.socketio:netty-socketio:1.7.11" />
-          <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-transport-native-unix-common:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-codec-http:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-transport-native-epoll:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: io.netty:netty-transport-classes-epoll:4.1.79.Final" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.36" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -47,7 +47,7 @@ public class IndexController {
     /**
      *获取选了这门课的所有学生
      */
-    @RequestMapping("studentList")
+    @RequestMapping("/studentList")
     public R getStudentInfoList(String courseId){
         List<String> students = courseService.getStudentList(courseId);
         List<Student> studentInfo = courseService.getStudentInfo(students);
