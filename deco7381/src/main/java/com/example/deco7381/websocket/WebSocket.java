@@ -43,6 +43,7 @@ public class WebSocket {
         System.out.println(studentId+"连接成功");
         List<Message> messages = (List<Message>) redisTemplate.opsForValue().get(studentId);
         if(messages!=null){
+            redisTemplate.delete(studentId);
             for(Message message:messages){
                 String messageJson = JSON.toJSONString(message);
                 sendTo(messageJson,session);
