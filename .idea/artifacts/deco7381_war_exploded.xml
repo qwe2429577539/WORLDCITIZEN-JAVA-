@@ -32,7 +32,6 @@
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:2.7.3" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-json:2.7.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.3" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.3" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.3" />
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.65" />
@@ -59,20 +58,41 @@
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.7.3" />
           <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:4.0.3" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.3.22" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.3.22" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.24" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.29" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-websocket:2.7.3" />
           <element id="library" level="project" name="Maven: org.springframework:spring-messaging:5.3.22" />
           <element id="library" level="project" name="Maven: org.springframework:spring-websocket:5.3.22" />
           <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt:0.9.1" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.3" />
           <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.0" />
           <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.3.0" />
           <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-core:2.3.0" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1.1" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:2.0.12" />
+          <element id="library" level="project" name="Maven: com.alibaba.fastjson2:fastjson2-extension:2.0.12" />
+          <element id="library" level="project" name="Maven: com.alibaba.fastjson2:fastjson2:2.0.12" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:2.7.3" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-redis:2.7.2" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-keyvalue:2.7.2" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:2.7.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.3.22" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:5.3.22" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:5.3.22" />
+          <element id="library" level="project" name="Maven: io.lettuce:lettuce-core:6.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: io.netty:netty-common:4.1.79.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-handler:4.1.79.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-resolver:4.1.79.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-buffer:4.1.79.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-transport-native-unix-common:4.1.79.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-codec:4.1.79.Final" />
+          <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.79.Final" />
+          <element id="library" level="project" name="Maven: io.projectreactor:reactor-core:3.4.22" />
+          <element id="library" level="project" name="Maven: org.reactivestreams:reactive-streams:1.0.4" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.11.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">

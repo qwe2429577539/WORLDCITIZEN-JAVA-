@@ -14,6 +14,7 @@ import com.example.deco7381.pojo.vo.RegisterRequestVo;
 import com.example.deco7381.pojo.vo.StudentInfoVo;
 import com.example.deco7381.service.StudentService;
 import com.example.deco7381.utils.JwtUtils;
+import com.example.deco7381.websocket.WebSocket;
 import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.stereotype.Service;
 
@@ -63,6 +64,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
             msg=ResultEnum.REGISTER_SUCCESS.getMessage();
             code=ResultEnum.REGISTER_SUCCESS.getCode();
         }
+
         map.put("message",msg);
         map.put("code",code);
         return map;

@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
 @TableName(value = "student")
-public class Student {
+public class Student implements Serializable {
     private String name;
     @TableField(value = "email")
     private String eMail;

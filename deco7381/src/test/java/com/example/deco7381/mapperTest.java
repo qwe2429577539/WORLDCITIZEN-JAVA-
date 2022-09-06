@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class mapperTest {
     @Resource
     private StudentMapper studentMapper;
