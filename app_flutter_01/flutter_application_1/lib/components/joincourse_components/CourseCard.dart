@@ -116,7 +116,7 @@ class CourseCard extends StatelessWidget {
           height: avatarLength,
 
           decoration: BoxDecoration(
-            color: Colors.deepPurpleAccent,
+            color: const Color.fromRGBO(108, 95, 188, 1),
             borderRadius: boxRadius,
           ),
           // margin: const EdgeInsets.only(right: 5),
@@ -137,7 +137,7 @@ class CourseCard extends StatelessWidget {
   Widget joinButton() {
     const padn = EdgeInsets.fromLTRB(24, 3.5, 24, 3.5);
     var borderAll = Border.all(
-      color: Colors.deepPurpleAccent,
+      color: const Color.fromRGBO(108, 95, 188, 1),
       width: 3,
     );
 
@@ -155,7 +155,7 @@ class CourseCard extends StatelessWidget {
             child: Text("Open",
                 style: TextStyle(
                   // TODO use mono font family
-                  color: Colors.deepPurpleAccent,
+                  color: Color.fromRGBO(108, 95, 188, 1),
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 )),
@@ -169,14 +169,14 @@ class CourseCard extends StatelessWidget {
         // margin: marginR,
         padding: padn,
         decoration: BoxDecoration(
-            color: Colors.deepPurpleAccent,
-            borderRadius: BorderRadius.circular(27),
+            color: const Color.fromRGBO(108, 95, 188, 1),
+            borderRadius: BorderRadius.circular(25),
             border: borderAll),
-        child: Center(
+        child: const Center(
           child: Text("Join",
               style: TextStyle(
                 // TODO use mono font family
-                color: Colors.white.withOpacity(0.9),
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               )),

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/joincourse_components/Department.dart';
 
@@ -5,35 +7,35 @@ class DeptButton extends StatelessWidget {
   final Department department;
   final void Function() press;
 
-  const DeptButton({Key? key, required this.department, required this.press}) : super(key: key);
+  const DeptButton({Key? key, required this.department, required this.press})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
-      // on Tap a page slide up TODO
       onTap: press,
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
           // The background button & department text name
           Padding(
-            padding: EdgeInsets.fromLTRB(8, 3, 8, 0),
+            padding: EdgeInsets.fromLTRB(9, 3, 9, 0),
             child: Container(
               margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
               padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
               decoration: BoxDecoration(
-                color: Color.fromRGBO(108, 95, 188, 1),
+                color: Colors.white.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(35),
                 border: Border.all(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withOpacity(0.17),
                   width: 1,
                 ),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 3,
-                    blurRadius: 3,
+                    color: Color.fromRGBO(9, 9, 19, 0.14),
+                    spreadRadius: 2,
+                    blurRadius: 14,
                     // offset: Offset(0, 3), // changes position of shadow
                   ),
                 ],
@@ -42,7 +44,7 @@ class DeptButton extends StatelessWidget {
               child: Text(department.name,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.8),
+                    color: Colors.white.withOpacity(0.9),
                     fontWeight: FontWeight.bold,
                     fontSize: department.textSize,
                   )),
@@ -53,9 +55,29 @@ class DeptButton extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset(
-                department.image,
-                width: size.width / 4,
+              Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Opacity(
+                      opacity: 0.4,
+                      child: Image.asset(
+                        department.image,
+                        width: size.width / 4.2,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  ClipRect(
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 3.0, sigmaY: 3.0),
+                      child: Image.asset(
+                        department.image,
+                        width: size.width / 4.2,
+                      ),
+                    ),
+                  )
+                ],
               ),
               SizedBox(height: 30),
             ],
