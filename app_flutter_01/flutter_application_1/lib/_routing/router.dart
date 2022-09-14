@@ -6,6 +6,7 @@ import 'package:flutter_application_1/mainpage/channel.dart';
 import 'package:flutter_application_1/mainpage/notice.dart';
 import 'package:flutter_application_1/mainpage/profile.dart';
 import 'package:flutter_application_1/mainpage/landing.dart';
+import 'package:flutter_application_1/subpage/contact.dart';
 import 'package:flutter_application_1/subpage/joincourse_main.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -19,6 +20,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => ChannelPage());
     case chatViewRoute:
       return MaterialPageRoute(builder: (context) => ChatPage());
+    case contactRoute:
+      return MaterialPageRoute(builder: (context) => ContactPage());
     case profileViewRoute:
       return MaterialPageRoute(builder: (context) => ProfilePage());
     case noticeViewRoute:
