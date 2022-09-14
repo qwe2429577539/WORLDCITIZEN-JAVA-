@@ -43,7 +43,7 @@ class _ContactPage extends State<ContactPage> {
                   children: [
                     // 聊天窗口
                     Expanded(
-                      flex: 9,
+                      flex: 6,
                       child: displayMessage("hi"),
                     ), // 聊天窗口
 
@@ -62,10 +62,23 @@ class _ContactPage extends State<ContactPage> {
     );
   }
 
+  Widget contactBubble() {
+    return Container(
+      child: Text("a"),
+      padding: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+          color: Color.fromARGB(99, 228, 191, 191),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(18),
+          )),
+    );
+  }
+
   Widget displayMessage(String text) {
     return Container(
-      child: ListView(children: const [
-        Text('data'),
+      child: ListView(children: [
+        contactBubble(),
+        contactBubble(),
       ]),
     );
   }
@@ -74,6 +87,20 @@ class _ContactPage extends State<ContactPage> {
     return IconButton(
       onPressed: null,
       icon: Icon(Icons.emoji_emotions),
+    );
+  }
+
+  IconButton sendButton() {
+    return IconButton(
+      onPressed: null,
+      icon: Icon(Icons.send),
+    );
+  }
+
+  IconButton infoButton() {
+    return IconButton(
+      onPressed: null,
+      icon: Icon(Icons.info),
     );
   }
 
@@ -91,11 +118,21 @@ class _ContactPage extends State<ContactPage> {
 
   Widget messageBar() {
     return Container(
+      decoration: const BoxDecoration(color: Color.fromARGB(99, 133, 129, 129)),
       child: Row(
-        children: [
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
           emojiButton(),
           // messageField(), //有BUG
-          Text('Okay'),
+          const Text('Okay'),
+          Spacer(),
+          sendButton(),
+          infoButton(),
+
+          // Container(
+          //     child: keyBoardButton(),
+          //     padding: const EdgeInsets.all(20),
+          //     alignment: Alignment.centerRight),
         ],
       ),
     );
