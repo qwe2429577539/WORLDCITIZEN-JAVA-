@@ -12,7 +12,7 @@ const BACKGROUNDCOLOR = Color.fromRGBO(188, 169, 255, 1);
 const CHATTEXTCOLOR = Color.fromARGB(255, 255, 255, 255);
 const REMINDERCOLOR = Color.fromARGB(255, 255, 255, 255);
 
-/// 聊天背景颜色设置
+/// 整体背景颜色设置
 const GRADIENTDECORATION = BoxDecoration(
     gradient: LinearGradient(
   begin: Alignment.topCenter,
