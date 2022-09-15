@@ -12,12 +12,15 @@ const BACKGROUNDCOLOR = Color.fromRGBO(188, 169, 255, 1);
 const CHATTEXTCOLOR = Color.fromARGB(255, 255, 255, 255);
 const REMINDERCOLOR = Color.fromARGB(255, 255, 255, 255);
 
-/// 整体背景颜色设置
+/// 聊天背景颜色设置
 const GRADIENTDECORATION = BoxDecoration(
     gradient: LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
-  colors: [Color.fromRGBO(255, 223, 255, 1), Color.fromRGBO(75, 38, 118, 1)],
+  colors: [
+    Color.fromARGB(255, 196, 124, 254),
+    Color.fromARGB(255, 132, 89, 242)
+  ],
 ));
 
 // Using to separate the chat list
