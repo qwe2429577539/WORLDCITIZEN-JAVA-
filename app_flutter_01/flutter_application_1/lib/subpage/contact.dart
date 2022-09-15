@@ -5,6 +5,17 @@ import 'package:flutter_application_1/mainpage/chat.dart';
 
 const CONTACTBACKGROUND = Color.fromARGB(255, 255, 255, 255);
 
+/// 聊天背景颜色设置
+const GRADIENTDECORATIONCONTACT = BoxDecoration(
+    gradient: LinearGradient(
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  colors: [
+    Color.fromARGB(255, 234, 228, 255),
+    Color.fromARGB(255, 242, 220, 255)
+  ],
+));
+
 class ContactPage extends StatefulWidget {
   const ContactPage({Key? key}) : super(key: key);
 
@@ -13,6 +24,8 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPage extends State<ContactPage> {
+  final TextEditingController _textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +56,7 @@ class _ContactPage extends State<ContactPage> {
                   children: [
                     // 聊天窗口
                     Expanded(
-                      flex: 6,
+                      flex: 8,
                       child: displayMessage("hi"),
                     ), // 聊天窗口
 
@@ -64,23 +77,29 @@ class _ContactPage extends State<ContactPage> {
 
   Widget contactBubble() {
     return Container(
-      child: Text("a"),
+      child: Text("Hello!"),
       padding: EdgeInsets.all(15),
-      decoration: BoxDecoration(
-          color: Color.fromARGB(99, 228, 191, 191),
+      width: 20,
+      margin: EdgeInsets.only(top: 10),
+      decoration: const BoxDecoration(
+          color: Color.fromARGB(255, 255, 249, 243),
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(18),
+            topRight: Radius.circular(18),
+            bottomLeft: Radius.circular(18),
+            bottomRight: Radius.circular(18),
           )),
     );
   }
 
   Widget displayMessage(String text) {
     return Container(
-      child: ListView(children: [
-        contactBubble(),
-        contactBubble(),
-      ]),
-    );
+        child: Padding(
+            padding: EdgeInsets.only(left: 18, right: 18, top: 15, bottom: 0),
+            child: ListView(children: [
+              contactBubble(),
+              contactBubble(),
+            ])),
+        decoration: GRADIENTDECORATIONCONTACT);
   }
 
   IconButton emojiButton() {
@@ -106,26 +125,28 @@ class _ContactPage extends State<ContactPage> {
 
   Widget messageField() {
     // TODO: debug
-    return Container(
-        color: Color.fromARGB(255, 168, 139, 139),
-        child: const TextField(
-          controller: null,
-          cursorColor: Color.fromARGB(255, 155, 139, 139),
-          maxLength: null,
-          maxLines: null,
-        ));
+    return Flexible(
+        //color: Color.fromARGB(255, 168, 139, 139),
+        child: TextField(
+      controller: _textEditingController,
+      onChanged: (value) {},
+      onSubmitted: (value) {},
+      cursorColor: Color.fromARGB(255, 155, 139, 139),
+      maxLength: null,
+      maxLines: null,
+      decoration: new InputDecoration.collapsed(hintText: "Type a message"),
+    ));
   }
 
   Widget messageBar() {
     return Container(
-      decoration: const BoxDecoration(color: Color.fromARGB(99, 133, 129, 129)),
+      decoration:
+          const BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           emojiButton(),
-          // messageField(), //有BUG
-          const Text('Okay'),
-          Spacer(),
+          messageField(),
           sendButton(),
           infoButton(),
 
