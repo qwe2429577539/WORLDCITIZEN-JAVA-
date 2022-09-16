@@ -1,6 +1,4 @@
-/**
- * chat page
- */
+/// chat page
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,12 +6,13 @@ import 'package:flutter_application_1/mainpage/notice.dart';
 import 'package:flutter_application_1/_routing/router.dart';
 import 'package:flutter_application_1/_routing/routes.dart';
 
-const BACKGROUNDCOLOR = Color.fromRGBO(188, 169, 255, 1);
-const CHATTEXTCOLOR = Color.fromARGB(255, 255, 255, 255);
-const REMINDERCOLOR = Color.fromARGB(255, 255, 255, 255);
+const backgroundColor = Color.fromRGBO(188, 169, 255, 1);
+const chatTextColor = Color.fromARGB(255, 255, 255, 255);
+const reminderColor = Color.fromARGB(255, 255, 255, 255);
+const mainPageTitleColor = Color.fromARGB(255, 255, 255, 255);
 
 /// 整体背景颜色设置
-const GRADIENTDECORATION = BoxDecoration(
+const gradientDecoration = BoxDecoration(
     gradient: LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
@@ -40,7 +39,7 @@ class _ChatPage extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: GRADIENTDECORATION,
+      decoration: gradientDecoration,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
@@ -58,7 +57,7 @@ class _ChatPage extends State<ChatPage> {
             "Chat",
             //style of title
             style: TextStyle(
-              color: Color.fromRGBO(108, 95, 188, 1),
+              color: mainPageTitleColor,
               fontSize: 34,
               height: 2,
             ),
@@ -164,13 +163,13 @@ class _ChatPage extends State<ChatPage> {
                 alignment: Alignment.topLeft,
                 child: Text(
                   name,
-                  style: const TextStyle(fontSize: 17, color: CHATTEXTCOLOR),
+                  style: const TextStyle(fontSize: 17, color: chatTextColor),
                 )),
             Align(
                 alignment: Alignment.topLeft,
                 child: Text(
                   message,
-                  style: const TextStyle(fontSize: 12, color: CHATTEXTCOLOR),
+                  style: const TextStyle(fontSize: 12, color: chatTextColor),
                 )),
           ],
         )); //Text 容器
@@ -185,11 +184,11 @@ class _ChatPage extends State<ChatPage> {
           alignment: Alignment.topCenter,
           child: Text(
             "2m ago",
-            style: TextStyle(fontSize: 11, color: REMINDERCOLOR),
+            style: TextStyle(fontSize: 11, color: reminderColor),
           )),
       Icon(
         Icons.timer,
-        color: REMINDERCOLOR,
+        color: reminderColor,
       ),
     ]);
   } //Chat状态提示
