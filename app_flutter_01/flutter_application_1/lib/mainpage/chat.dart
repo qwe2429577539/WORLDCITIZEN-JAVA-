@@ -5,27 +5,21 @@ import 'package:flutter/services.dart';
 import 'package:flutter_application_1/mainpage/notice.dart';
 import 'package:flutter_application_1/_routing/router.dart';
 import 'package:flutter_application_1/_routing/routes.dart';
+import 'package:flutter_application_1/components/ColorTheme.dart'
+  as color_theme;
+import 'package:flutter_application_1/components/CustomizedWidget.dart'
+  as customized_widget;
 
 const backgroundColor = Color.fromRGBO(188, 169, 255, 1);
 const chatTextColor = Color.fromARGB(255, 255, 255, 255);
 const reminderColor = Color.fromARGB(255, 255, 255, 255);
 const mainPageTitleColor = Color.fromARGB(255, 255, 255, 255);
 
-/// 整体背景颜色设置
-const gradientDecoration = BoxDecoration(
-    gradient: LinearGradient(
-  begin: Alignment.topCenter,
-  end: Alignment.bottomCenter,
-  colors: [
-    Color.fromARGB(255, 196, 124, 254),
-    Color.fromARGB(255, 132, 89, 242)
-  ],
-));
-
 // Using to separate the chat list
-const chatDivider = Divider(
-  height: 30,
-  thickness: 1,
+final chatDivider = Divider(
+  height: 2,
+  // thickness: 1,
+  color: Colors.white.withOpacity(0.9),
 );
 
 class ChatPage extends StatefulWidget {
@@ -39,43 +33,14 @@ class _ChatPage extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: gradientDecoration,
+      decoration: color_theme.backgroundColor,
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, noticeViewRoute);
-                },
-                icon: const Icon(Icons.notifications),
-                iconSize: 40,
-                padding: const EdgeInsets.all(20.0))
-          ],
-          //title
-          title: const Text(
-            "Chat",
-            //style of title
-            style: TextStyle(
-              color: mainPageTitleColor,
-              fontSize: 34,
-              height: 2,
-            ),
-          ),
-          toolbarHeight: 110,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
+        appBar: customized_widget.mainPageAppBar(context, "Chat"),
         body: ListView(
           children: [
-            Container(
-                padding: const EdgeInsets.only(
-                    left: 0, top: 0, bottom: 10, right: 0),
-                child: const Divider(
-                  height: 1,
-                  thickness: 1,
-                  color: Color.fromARGB(100, 255, 255, 255),
-                )),
+            customized_widget.divider,
+            customized_widget.searchBar,
             Container(
                 //chat list
                 padding:
@@ -103,7 +68,7 @@ class _ChatPage extends State<ChatPage> {
           children: [
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               //横向内容
-              userAvatar(),
+              customized_widget.avatar("https://img.seadn.io/files/287642025dee577c910b23ecf444385c.png?fit=max&w=600", true),
               userText(name, message),
               userNotice(),
             ]),
@@ -118,6 +83,7 @@ class _ChatPage extends State<ChatPage> {
   } // chat单元
 
   /// 用户头像容器
+/*
   Widget userAvatar() {
     return Container(
       //头像容器
@@ -148,6 +114,7 @@ class _ChatPage extends State<ChatPage> {
       ),
     );
   } // 用户头像容器
+*/
 
   /// 用户Text内容容器
   Widget userText(String name, String message) {

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/mainpage/chat.dart';
+import 'package:flutter_application_1/components/ColorTheme.dart'
+as color_theme;
+import 'package:flutter_application_1/components/CustomizedWidget.dart'
+as customized_widget;
 
 const contactBackground = Color.fromARGB(255, 255, 255, 255);
 const sendMessageBubbleColor = Color.fromARGB(255, 255, 249, 243);
@@ -185,20 +189,27 @@ class _ContactPage extends State<ContactPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: gradientDecoration,
+      decoration: color_theme.backgroundColor,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: const Text(
-            "Chat",
-            //style of title
-            style: TextStyle(
-              color: Color.fromRGBO(108, 95, 188, 1),
-              fontSize: 34,
-              height: 2,
-            ),
+          automaticallyImplyLeading: false,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              // Back Button
+              GestureDetector(
+                child: customized_widget.backButton,
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+
+              // TODO Subpage Headline
+              customized_widget.subpageHeadline("Chat"),
+            ],
           ),
-          centerTitle: true,
+          // centerTitle: true,
           toolbarHeight: 110,
           backgroundColor: Colors.transparent,
           elevation: 0,

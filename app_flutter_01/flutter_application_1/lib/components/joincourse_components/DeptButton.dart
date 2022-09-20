@@ -20,10 +20,10 @@ class DeptButton extends StatelessWidget {
         children: <Widget>[
           // The background button & department text name
           Padding(
-            padding: EdgeInsets.fromLTRB(9, 3, 9, 0),
+            padding: const EdgeInsets.fromLTRB(9, 3, 9, 0),
             child: Container(
-              margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+              margin: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(35),
@@ -40,7 +40,7 @@ class DeptButton extends StatelessWidget {
                   ),
                 ],
               ),
-              alignment: Alignment(0.0, 0.9),
+              alignment: const Alignment(0.0, 0.9),
               child: Text(department.name,
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -79,7 +79,8 @@ class DeptButton extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 30),
+              // TODO SizedBox could be useless
+              const SizedBox(height: 30),
             ],
           )
         ],
