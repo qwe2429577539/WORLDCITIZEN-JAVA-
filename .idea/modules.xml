@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/WORLDCITIZEN.iml" filepath="$PROJECT_DIR$/.idea/WORLDCITIZEN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/flutter_application_1.iml" filepath="$PROJECT_DIR$/.idea/flutter_application_1.iml" />
     </modules>
   </component>
 </project>
