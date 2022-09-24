@@ -2,7 +2,7 @@
  * channel page
  */
 
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/mainpage/notice.dart';
@@ -73,9 +73,9 @@ class _ChannelPage extends State<ChannelPage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       image: DecorationImage(
-                      image: NetworkImage(
-                        "https://familynews.today/wp-content/uploads/2022/05/GG.jpg"),
-                    ),
+                        image: NetworkImage(
+                            "https://familynews.today/wp-content/uploads/2022/05/GG.jpg"),
+                      ),
                       border: Border.all(
                         color: Color.fromRGBO(108, 95, 188, 1),
                         width: 1,
@@ -103,8 +103,7 @@ class _ChannelPage extends State<ChannelPage> {
                     ),
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text(
-                          "BUSINESS💼"),
+                      child: Text("BUSINESS💼"),
                     ),
                   ),
                 ),
@@ -124,8 +123,7 @@ class _ChannelPage extends State<ChannelPage> {
                     ),
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text(
-                         "PARTY🎈"),
+                      child: Text("PARTY🎈"),
                     ),
                   ),
                 ),
@@ -145,8 +143,7 @@ class _ChannelPage extends State<ChannelPage> {
                     ),
                     child: Align(
                       alignment: Alignment.center,
-                      child: Text(
-                         "STUDY📖"),
+                      child: Text("STUDY📖"),
                     ),
                   ),
                 ),
@@ -187,10 +184,8 @@ class _ChannelPage extends State<ChannelPage> {
         ),
       ),
     );
-     
   }
 }
-
 
 class _HomeWeight extends StatelessWidget {
   const _HomeWeight({Key? key}) : super(key: key);

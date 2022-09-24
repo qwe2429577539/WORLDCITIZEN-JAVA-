@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/mainpage/notice.dart';
 import 'package:flutter_application_1/_routing/router.dart';
 import 'package:flutter_application_1/_routing/routes.dart';
-import 'package:flutter_application_1/subpage/add_tag_profile.dart';
+//import 'package:flutter_application_1/subpage/add_tag_profile.dart';
 
 /**
  * Profile
@@ -30,7 +30,6 @@ class _ProfilePage extends State<ProfilePage> {
     });
   }
 
-
   List<String> labels = ["#music", "#martial arts"];
 
   //姓名和头像
@@ -49,7 +48,6 @@ class _ProfilePage extends State<ProfilePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-
                   Text(
                     'Tom',
                     style: new TextStyle(
@@ -218,8 +216,7 @@ class _ProfilePage extends State<ProfilePage> {
                         // ),
                         shape: RoundedRectangleBorder(
                             borderRadius:
-                            BorderRadius.all(
-                                Radius.circular(20.0))),
+                                BorderRadius.all(Radius.circular(20.0))),
 
                         content: TextField(
                           controller: titleController,
@@ -440,8 +437,7 @@ class _ProfilePage extends State<ProfilePage> {
                 image: DecorationImage(
                   image:
                       //AssetImage('assets/images/ic_home_school1.png'),
-                      NetworkImage(
-                          ""),
+                      NetworkImage(""),
                 ),
               ),
               // onPressed: () {
