@@ -9,4 +9,5 @@ public class StudentCourse {
     private Long id;
     private String studentId;
     private String courseId;
+    private String studentName;
 }

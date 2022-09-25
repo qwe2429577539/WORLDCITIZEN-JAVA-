@@ -1,6 +1,7 @@
 package com.example.deco7381;
 
 import com.example.deco7381.mapper.HobbiesMapper;
+import com.example.deco7381.mapper.StudentCourseMapper;
 import com.example.deco7381.pojo.*;
 import com.example.deco7381.service.CourseFieldsService;
 import com.example.deco7381.service.CourseService;
@@ -27,6 +28,8 @@ public class serviceTest {
     private HobbiesService hobbiesService;
     @Resource
     private CourseFieldsService courseFieldsService;
+    @Resource
+    private StudentCourseMapper studentCourseMapper;
 
     /**
      * 读取该学生的所有课程测试
@@ -78,5 +81,21 @@ public class serviceTest {
     @Test
     public void test6() {
         List<CourseFields> courseFields = courseFieldsService.getCourseFields();
+    }
+
+    @Test
+    /**
+     * 读取所有该课程属性下所有课程测试
+     */
+    public void test7() {
+        List<CourseFields> courseFields = courseFieldsService.getAllCourseByFields("EAIT");
+    }
+
+    @Test
+    /**
+     * Adding course by Student
+     */
+    public void test8() {
+        courseFieldsService.addCourse("46725806","DECO7381");
     }
 }
