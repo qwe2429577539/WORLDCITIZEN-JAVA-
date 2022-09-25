@@ -1,21 +1,23 @@
 package com.example.deco7381.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.deco7381.common.Assert;
 import com.example.deco7381.common.ResultEnum;
+import com.example.deco7381.mapper.HobbiesMapper;
 import com.example.deco7381.mapper.StudentCourseMapper;
+import com.example.deco7381.mapper.StudentFriendsMapper;
 import com.example.deco7381.pojo.Student;
 import com.example.deco7381.mapper.StudentMapper;
 
 import com.example.deco7381.pojo.StudentCourse;
+import com.example.deco7381.pojo.UserFriend;
 import com.example.deco7381.pojo.vo.LoginVO;
 import com.example.deco7381.pojo.vo.RegisterRequestVo;
 import com.example.deco7381.pojo.vo.StudentInfoVo;
 import com.example.deco7381.service.StudentService;
 import com.example.deco7381.utils.JwtUtils;
-import com.example.deco7381.websocket.WebSocket;
-import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -30,6 +32,11 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     private StudentMapper studentMapper;
     @Resource
     private StudentCourseMapper studentCourseMapper;
+    @Resource
+    private HobbiesMapper hobbiesMapper;
+    @Resource
+    private StudentFriendsMapper studentFriendsMapper;
+
     @Override
     public List<String> getCourse(String studentId){
         HashMap<String, Object> studntIdMap = new HashMap<>();
@@ -70,6 +77,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         return map;
     }
 
+
     @Override
     public StudentInfoVo login(LoginVO loginVO) {
         String studentId = loginVO.getStudentId();
@@ -91,6 +99,14 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         return studentInfoVo;
 
 
+    }
+
+    @Override
+    public List<UserFriend> getFriends(String studentId) {
+        LambdaQueryWrapper<UserFriend> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(UserFriend::getId,studentId);
+        List<UserFriend> userFriends = studentFriendsMapper.selectList(lambdaQueryWrapper);
+        return userFriends;
     }
 
 
