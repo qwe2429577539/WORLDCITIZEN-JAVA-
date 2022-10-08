@@ -76,7 +76,6 @@ public class WebSocket {
             sendTo(message,sessionTo);
         }
         System.out.println(messageInfo.getMsg());
-
     }
 
     private void sendTo(String message, Session sessionTo) {

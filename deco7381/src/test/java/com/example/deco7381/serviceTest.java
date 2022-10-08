@@ -1,8 +1,11 @@
 package com.example.deco7381;
 
+import com.example.deco7381.pojo.Course;
+import com.example.deco7381.pojo.Student;
 import com.example.deco7381.mapper.HobbiesMapper;
 import com.example.deco7381.mapper.StudentCourseMapper;
 import com.example.deco7381.pojo.*;
+import org.junit.runner.RunWith;
 import com.example.deco7381.service.CourseFieldsService;
 import com.example.deco7381.service.CourseService;
 import com.example.deco7381.service.HobbiesService;
@@ -10,7 +13,6 @@ import com.example.deco7381.service.StudentService;
 
 import com.example.deco7381.service.impl.HobbiesServiceImpl;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -57,6 +59,13 @@ public class serviceTest {
         List<String> students = courseService.getStudentList("DECO7381");
         List<Student> studentInfo = courseService.getStudentInfo(students);
         studentInfo.forEach(System.out::println);
+    }
+    @Test
+    public void test9(){
+        Course deco7100 = courseService.getCourse("deco7100");
+        if(deco7100==null){
+            System.out.println("yes");
+        }
     }
 
     /**

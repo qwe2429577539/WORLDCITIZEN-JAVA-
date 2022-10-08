@@ -11,4 +11,5 @@ public class StudentInfoVo {
     private String name;
     private String country;
     private String token;
+    private String studentId;
 }

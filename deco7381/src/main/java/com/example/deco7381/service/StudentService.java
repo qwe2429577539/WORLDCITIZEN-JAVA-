@@ -20,5 +20,5 @@ import java.util.Map;
     List<UserFriend> getFriends(String studentId);
 
 
-
+//    StudentInfoVo getStudent(String studentId);
 }

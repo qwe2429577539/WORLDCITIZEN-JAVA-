@@ -12,4 +12,5 @@ public class Message {
     private String to;
     private String from;
     private String msg;
+    private String type;
 }

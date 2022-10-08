@@ -10,4 +10,6 @@ public interface CourseService extends IService<Course> {
     List<String> getStudentList(String courseId);
 
     List<Student> getStudentInfo(List<String> studentList);
+
+    Course getCourse(String course);
 }
