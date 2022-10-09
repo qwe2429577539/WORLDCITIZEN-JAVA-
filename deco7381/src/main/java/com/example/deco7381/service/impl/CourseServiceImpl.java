@@ -1,5 +1,6 @@
 package com.example.deco7381.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.deco7381.mapper.CourseMapper;
 import com.example.deco7381.mapper.StudentCourseMapper;
@@ -8,6 +9,7 @@ import com.example.deco7381.pojo.Course;
 import com.example.deco7381.pojo.Student;
 import com.example.deco7381.pojo.StudentCourse;
 import com.example.deco7381.service.CourseService;
+import com.example.deco7381.utils.Utils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -21,6 +23,8 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
     private StudentCourseMapper studentCourseMapper;
     @Resource
     private StudentMapper studentMapper;
+    @Resource
+    private CourseMapper courseMapper;
 
     @Override
     public List<String> getStudentList(String courseId) {
@@ -48,6 +52,24 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
 
         }
         return studentList;
+    }
+
+    @Override
+    public Course getCourse(String course) {
+        QueryWrapper<Course> courseQueryWrapper = new QueryWrapper<>();
+        if (Utils.HasDigit(course)){
+            String courseId=course;
+            courseQueryWrapper.eq("course_id",courseId);
+            Course course1 = courseMapper.selectOne(courseQueryWrapper);
+            return course1;
+        }else {
+            String courseName=course;
+            courseQueryWrapper.eq("name",courseName);
+            Course course2 = courseMapper.selectOne(courseQueryWrapper);
+            return course2;
+        }
+
+
     }
 
 }

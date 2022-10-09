@@ -22,5 +22,5 @@ import java.util.Map;
     StudentDetailVO getStudent(String studentId);
 
 
-
+//    StudentInfoVo getStudent(String studentId);
 }

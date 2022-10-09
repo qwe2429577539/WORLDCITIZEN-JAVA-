@@ -62,6 +62,13 @@ public class mapperTest {
         List<StudentCourse> studentCourses = studentCourseMapper.selectByMap(hashMap);
         studentCourses.forEach(System.out::println);
     }
+    @Test
+    public void test6(){
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("student_id","46725805");
+        List<StudentCourse> studentCourses = studentCourseMapper.selectByMap(hashMap);
+        studentCourses.forEach(System.out::println);
+    }
 
 
 }
