@@ -5,12 +5,14 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.deco7381.common.Assert;
 import com.example.deco7381.common.R;
 import com.example.deco7381.common.ResultEnum;
-import com.example.deco7381.pojo.Student;
+import com.example.deco7381.pojo.*;
 
 import com.example.deco7381.pojo.vo.LoginVO;
 import com.example.deco7381.pojo.vo.RegisterRequestVo;
 import com.example.deco7381.pojo.vo.StudentInfoVo;
+import com.example.deco7381.service.CourseFieldsService;
 import com.example.deco7381.service.CourseService;
+import com.example.deco7381.service.StudentCourseService;
 import com.example.deco7381.service.StudentService;
 import com.example.deco7381.utils.JwtUtils;
 
@@ -23,6 +25,7 @@ import javax.servlet.http.HttpSession;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -34,6 +37,10 @@ public class IndexController {
     private StudentService studentService;
     @Resource
     private CourseService courseService;
+    @Resource
+    private CourseFieldsService courseFieldsService;
+    @Resource
+    private StudentCourseService studentCourseService;
 
     /**
      *获取该学生的选课列表
@@ -52,6 +59,70 @@ public class IndexController {
         List<String> students = courseService.getStudentList(courseId);
         List<Student> studentInfo = courseService.getStudentInfo(students);
         return R.ok().resultEnum(ResultEnum.SUCCESS).data("studentList",studentInfo);
+    }
+
+    /**
+     * Get all friends from this users
+     * @param studentId
+     * @return
+     */
+    public List<UserFriend> getAllFriends(String studentId){
+        List<UserFriend> friends = studentService.getFriends(studentId);
+        R.ok();
+        return friends;
+    }
+
+    /**
+     * Get one student's Info
+     * @param studentId
+     * @return
+     */
+    public Student getStudentInfo(String studentId){
+        Student student = studentService.getById(studentId);
+        R.ok();
+        return student;
+    }
+
+    /**
+     * Get all course fields
+     * @return
+     */
+    public List<CourseFields> getAllCourseFields(){
+        List<CourseFields> courseFields = courseFieldsService.getCourseFields();
+        R.ok();
+        return courseFields;
+    }
+
+    /**
+     * Get all courses by course field
+     * @param courseFields
+     * @return
+     */
+    public List<Course> getAllCourseByFields(CourseFields courseFields){
+        List<Course> courses = new ArrayList<>();
+        List<CourseFields> courseList = courseFieldsService.getAllCourseByFields(String.valueOf(courseFields));
+        for (CourseFields info : courseList) {
+            Course course = new Course();
+            course.setCourseId(info.getCourseId());
+            course.setName(info.getFieldName());
+            courses.add(course);
+        }
+        R.ok();
+        return courses;
+    }
+
+    /**
+     * Add course for the user
+     * @param studentId
+     * @param courseId
+     */
+    public void addCourse(String studentId, String courseId){
+        StudentCourse studentCourse = new StudentCourse();
+        Student student = studentService.getById(studentId);
+        studentCourse.setStudentId(studentId);
+        studentCourse.setStudentName(student.getName());
+        studentCourse.setCourseId(courseId);
+        studentCourseService.save(studentCourse);
     }
     /**
      * 用户注册

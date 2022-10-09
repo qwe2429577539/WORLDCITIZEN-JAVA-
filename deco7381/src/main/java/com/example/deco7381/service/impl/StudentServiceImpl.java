@@ -8,6 +8,7 @@ import com.example.deco7381.common.ResultEnum;
 import com.example.deco7381.mapper.HobbiesMapper;
 import com.example.deco7381.mapper.StudentCourseMapper;
 import com.example.deco7381.mapper.StudentFriendsMapper;
+import com.example.deco7381.pojo.Hobbies;
 import com.example.deco7381.pojo.Student;
 import com.example.deco7381.mapper.StudentMapper;
 
@@ -15,10 +16,12 @@ import com.example.deco7381.pojo.StudentCourse;
 import com.example.deco7381.pojo.UserFriend;
 import com.example.deco7381.pojo.vo.LoginVO;
 import com.example.deco7381.pojo.vo.RegisterRequestVo;
+import com.example.deco7381.pojo.vo.StudentDetailVO;
 import com.example.deco7381.pojo.vo.StudentInfoVo;
 import com.example.deco7381.service.StudentService;
 import com.example.deco7381.utils.JwtUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -107,6 +110,40 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
         lambdaQueryWrapper.eq(UserFriend::getId,studentId);
         List<UserFriend> userFriends = studentFriendsMapper.selectList(lambdaQueryWrapper);
         return userFriends;
+    }
+
+    @Override
+    public StudentDetailVO getStudent(String studentId) {
+        StudentDetailVO studentDetailVO = new StudentDetailVO();
+
+        Student student = studentMapper.selectById(studentId);
+        studentDetailVO.setName(student.getName());
+        studentDetailVO.setNationality(student.getCountry());
+        studentDetailVO.setMajor(student.getMajor());
+        studentDetailVO.setImgSrc(student.getImgSrc());
+
+        LambdaQueryWrapper<Hobbies> hobbiesLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        hobbiesLambdaQueryWrapper.eq(Hobbies::getStudentId,student);
+        List<Hobbies> hobbiesList = hobbiesMapper.selectList(hobbiesLambdaQueryWrapper);
+
+        StringBuffer allHobbies = new StringBuffer();
+        for (Hobbies hobbies :hobbiesList) {
+            String hobby = String.valueOf(hobbies);
+            allHobbies.append(hobby);
+            allHobbies.append(" ");
+        }
+        studentDetailVO.setHobbies(String.valueOf(allHobbies));
+
+
+
+
+
+
+
+
+        return studentDetailVO;
+
+
     }
 
 

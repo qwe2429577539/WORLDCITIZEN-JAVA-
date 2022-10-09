@@ -6,6 +6,7 @@ import com.example.deco7381.pojo.StudentCourse;
 import com.example.deco7381.pojo.UserFriend;
 import com.example.deco7381.pojo.vo.LoginVO;
 import com.example.deco7381.pojo.vo.RegisterRequestVo;
+import com.example.deco7381.pojo.vo.StudentDetailVO;
 import com.example.deco7381.pojo.vo.StudentInfoVo;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ import java.util.Map;
     Map<String, Object> register(RegisterRequestVo rVo);
     StudentInfoVo login(LoginVO loginVO);
     List<UserFriend> getFriends(String studentId);
+    StudentDetailVO getStudent(String studentId);
 
 
 

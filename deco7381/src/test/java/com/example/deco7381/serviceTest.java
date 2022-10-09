@@ -1,12 +1,10 @@
 package com.example.deco7381;
 
 import com.example.deco7381.mapper.HobbiesMapper;
+import com.example.deco7381.mapper.NotificationsMapper;
 import com.example.deco7381.mapper.StudentCourseMapper;
 import com.example.deco7381.pojo.*;
-import com.example.deco7381.service.CourseFieldsService;
-import com.example.deco7381.service.CourseService;
-import com.example.deco7381.service.HobbiesService;
-import com.example.deco7381.service.StudentService;
+import com.example.deco7381.service.*;
 
 import com.example.deco7381.service.impl.HobbiesServiceImpl;
 import org.junit.jupiter.api.Test;
@@ -30,6 +28,12 @@ public class serviceTest {
     private CourseFieldsService courseFieldsService;
     @Resource
     private StudentCourseMapper studentCourseMapper;
+    @Resource
+    private NotificationsMapper notificationsMapper;
+    @Resource
+    private NotificationsService notificationsService;
+    @Resource
+    private PostsService postsService;
 
     /**
      * 读取该学生的所有课程测试
@@ -97,5 +101,37 @@ public class serviceTest {
      */
     public void test8() {
         courseFieldsService.addCourse("46725806","DECO7381");
+    }
+
+    @Test
+    /**
+     * Adding Notifications
+     */
+    public void test9() {
+        notificationsService.addNotification("46725806","We're not friends any more...");
+    }
+
+    @Test
+    /**
+     * Getting Notifications
+     */
+    public void test10() {
+        notificationsService.getNotifications("46725806");
+    }
+
+    @Test
+    /**
+     * Adding post
+     */
+    public void test11() {
+        postsService.addPost("46725806","Today is a good day!");
+    }
+
+    @Test
+    /**
+     * Getting post
+     */
+    public void test12() {
+        postsService.getPostsById("46725806");
     }
 }
