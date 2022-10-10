@@ -16,6 +16,7 @@ import com.example.deco7381.service.StudentCourseService;
 import com.example.deco7381.service.StudentService;
 import com.example.deco7381.utils.JwtUtils;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -31,6 +32,7 @@ import java.util.Map;
 
 @CrossOrigin
 @RestController
+@Controller
 @RequestMapping("/user")
 public class IndexController {
     @Resource
@@ -66,6 +68,7 @@ public class IndexController {
      * @param studentId
      * @return
      */
+    @RequestMapping("/friendsList")
     public List<UserFriend> getAllFriends(String studentId){
         List<UserFriend> friends = studentService.getFriends(studentId);
         R.ok();
@@ -77,6 +80,7 @@ public class IndexController {
      * @param studentId
      * @return
      */
+    @RequestMapping("/studentInfo")
     public Student getStudentInfo(String studentId){
         Student student = studentService.getById(studentId);
         R.ok();
@@ -87,6 +91,7 @@ public class IndexController {
      * Get all course fields
      * @return
      */
+    @RequestMapping("/courseFields")
     public List<CourseFields> getAllCourseFields(){
         List<CourseFields> courseFields = courseFieldsService.getCourseFields();
         R.ok();
@@ -98,6 +103,7 @@ public class IndexController {
      * @param courseFields
      * @return
      */
+    @RequestMapping("/allCourses")
     public List<Course> getAllCourseByFields(CourseFields courseFields){
         List<Course> courses = new ArrayList<>();
         List<CourseFields> courseList = courseFieldsService.getAllCourseByFields(String.valueOf(courseFields));
@@ -116,6 +122,7 @@ public class IndexController {
      * @param studentId
      * @param courseId
      */
+    @RequestMapping("/addCourse")
     public void addCourse(String studentId, String courseId){
         StudentCourse studentCourse = new StudentCourse();
         Student student = studentService.getById(studentId);

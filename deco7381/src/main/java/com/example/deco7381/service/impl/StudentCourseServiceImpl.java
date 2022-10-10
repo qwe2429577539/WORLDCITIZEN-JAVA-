@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.deco7381.mapper.StudentCourseMapper;
 import com.example.deco7381.pojo.StudentCourse;
 import com.example.deco7381.service.StudentCourseService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StudentCourseServiceImpl extends ServiceImpl<StudentCourseMapper, StudentCourse> implements StudentCourseService {
 }

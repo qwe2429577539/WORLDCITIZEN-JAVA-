@@ -10,14 +10,17 @@ import com.example.deco7381.service.PostsService;
 import com.example.deco7381.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @CrossOrigin
 @RestController
+@Controller
 @Slf4j
 @RequestMapping("/me")
 public class MeController {
@@ -27,6 +30,7 @@ public class MeController {
     private StudentService studentService;
     @Autowired
     private PostsService postsService;
+
 
     /**
      *Get all information of this user（Name、nationality、major、Tags、hobbies、figure of account.

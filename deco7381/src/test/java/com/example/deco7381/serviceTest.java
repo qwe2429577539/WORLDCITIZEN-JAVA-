@@ -74,7 +74,7 @@ public class serviceTest {
      */
     @Test
     public void test4() {
-        List<String> hobbies = hobbiesService.getHobbies("46725807");
+        List<Hobbies> hobbies = hobbiesService.getHobbies("46725807");
     }
 
     /**
@@ -139,5 +139,13 @@ public class serviceTest {
      */
     public void test12() {
         postsService.getPostsById("46725806");
+    }
+
+    @Test
+    /**
+     * Get random friends with same hobbies
+     */
+    public void test13() {
+        hobbiesService.getRandomFriends("12");
     }
 }
