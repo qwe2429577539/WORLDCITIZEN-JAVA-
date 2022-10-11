@@ -1,9 +1,6 @@
 /**
  * channel Sub page
  */
-
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/mainpage/notice.dart';
 import 'package:flutter_application_1/_routing/routes.dart';

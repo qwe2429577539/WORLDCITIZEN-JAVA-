@@ -148,6 +148,47 @@ Widget avatar(String img, bool online) {
     ),
   );
 }
+Widget avatarForChannel(String img, bool online) {
+  return Container(
+    // the gradient border
+    width: 55,
+    height: 55,
+    alignment: Alignment.center,
+    decoration: online
+        ? BoxDecoration(
+      gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color.fromRGBO(255, 144, 99, 1),
+            Color.fromRGBO(112, 79, 254, 1)
+          ]),
+      borderRadius: BorderRadius.circular(15),
+    )
+        : BoxDecoration(
+      color: Colors.grey.withOpacity(0.3),
+      borderRadius: BorderRadius.circular(15),
+    ),
+    //头像容器
+    child: Container(
+      // part of the border
+      width: 50,
+      height: 50,
+      padding: const EdgeInsets.all(5),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: color_theme.roundedPageColor,
+      ),
+      child: Container(
+        // the avatar
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              image: DecorationImage(
+                image: NetworkImage(img),
+              ))),
+    ),
+  );
+}
 
 AppBar mainPageAppBar(BuildContext context, String headline) {
   return AppBar(

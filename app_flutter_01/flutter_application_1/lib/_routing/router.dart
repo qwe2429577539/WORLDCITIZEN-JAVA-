@@ -8,6 +8,7 @@ import 'package:flutter_application_1/mainpage/profile.dart';
 import 'package:flutter_application_1/mainpage/landing.dart';
 import 'package:flutter_application_1/subpage/contact.dart';
 import 'package:flutter_application_1/subpage/joincourse_main.dart';
+import 'package:flutter_application_1/subpage/channelSubPage.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -28,6 +29,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => NoticePage());
     case joinCourseMainViewRoute:
       return MaterialPageRoute(builder: (context) => JoinCourseMainPage());
+    case channelSubtopicViewRoute:
+      return MaterialPageRoute(builder: (context) => ChannelSubPage());
       break;
     default:
       return MaterialPageRoute(builder: (context) => HomePage());
