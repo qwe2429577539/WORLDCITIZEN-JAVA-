@@ -23,10 +23,10 @@ public class ChatController {
         //initialize a hashmap for storing the chatting topics
         HashMap<String,Object> chattingTopics = new HashMap<>();
         //different topics
-        chattingTopics.put("Food","What's your favourite food?");
-        chattingTopics.put("Travel","Have u ever been to American?");
-        chattingTopics.put("Mood","How's your day going so far?");
-        chattingTopics.put("Study","Would u like to go to library together?");
+        chattingTopics.put("Food: ","What's your favourite food?");
+        chattingTopics.put("Travel: ","Have u ever been to American?");
+        chattingTopics.put("Mood: ","How's your day going so far?");
+        chattingTopics.put("Study: ","Would u like to go to library together?");
         //return the hashmap
         return chattingTopics;
     }
