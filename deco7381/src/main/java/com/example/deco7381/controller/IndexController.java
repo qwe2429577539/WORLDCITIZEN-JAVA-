@@ -5,17 +5,20 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.deco7381.common.Assert;
 import com.example.deco7381.common.R;
 import com.example.deco7381.common.ResultEnum;
-import com.example.deco7381.pojo.Student;
+import com.example.deco7381.pojo.*;
 
 import com.example.deco7381.pojo.UserFriend;
 import com.example.deco7381.pojo.vo.GetStudentVo;
 import com.example.deco7381.pojo.vo.LoginVO;
 import com.example.deco7381.pojo.vo.RegisterRequestVo;
 import com.example.deco7381.pojo.vo.StudentInfoVo;
+import com.example.deco7381.service.CourseFieldsService;
 import com.example.deco7381.service.CourseService;
+import com.example.deco7381.service.StudentCourseService;
 import com.example.deco7381.service.StudentService;
 import com.example.deco7381.utils.JwtUtils;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -25,11 +28,13 @@ import javax.servlet.http.HttpSession;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @CrossOrigin
 @RestController
+@Controller
 @RequestMapping("/user")
 
 /**
@@ -40,6 +45,10 @@ public class IndexController {
     private StudentService studentService;
     @Resource
     private CourseService courseService;
+    @Resource
+    private CourseFieldsService courseFieldsService;
+    @Resource
+    private StudentCourseService studentCourseService;
 
     /**
      *Get user's course list

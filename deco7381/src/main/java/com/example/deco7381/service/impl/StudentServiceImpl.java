@@ -5,8 +5,10 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.deco7381.common.Assert;
 import com.example.deco7381.common.ResultEnum;
+import com.example.deco7381.mapper.HobbiesMapper;
 import com.example.deco7381.mapper.StudentCourseMapper;
 import com.example.deco7381.mapper.StudentFriendsMapper;
+import com.example.deco7381.pojo.Hobbies;
 import com.example.deco7381.pojo.Student;
 import com.example.deco7381.mapper.StudentMapper;
 
@@ -15,12 +17,14 @@ import com.example.deco7381.pojo.UserFriend;
 import com.example.deco7381.pojo.vo.GetStudentVo;
 import com.example.deco7381.pojo.vo.LoginVO;
 import com.example.deco7381.pojo.vo.RegisterRequestVo;
+import com.example.deco7381.pojo.vo.StudentDetailVO;
 import com.example.deco7381.pojo.vo.StudentInfoVo;
 import com.example.deco7381.service.StudentService;
 import com.example.deco7381.utils.JwtUtils;
 import com.example.deco7381.websocket.WebSocket;
 import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;

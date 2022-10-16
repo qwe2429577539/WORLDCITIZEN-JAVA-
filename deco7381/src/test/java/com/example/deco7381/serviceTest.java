@@ -1,10 +1,19 @@
 package com.example.deco7381;
 
 import com.example.deco7381.pojo.Course;
+import com.example.deco7381.pojo.Student;
+import com.example.deco7381.mapper.HobbiesMapper;
+import com.example.deco7381.mapper.NotificationsMapper;
 import com.example.deco7381.mapper.StudentCourseMapper;
 import com.example.deco7381.pojo.*;
 import com.example.deco7381.pojo.vo.GetStudentVo;
 import com.example.deco7381.service.*;
+import com.example.deco7381.service.*;
+import org.junit.runner.RunWith;
+import com.example.deco7381.service.CourseFieldsService;
+import com.example.deco7381.service.CourseService;
+import com.example.deco7381.service.HobbiesService;
+import com.example.deco7381.service.StudentService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.system.ApplicationHome;
@@ -29,6 +38,12 @@ public class serviceTest {
     private StudentCourseMapper studentCourseMapper;
     @Resource
     private ChannelPostsService channelPostsService;
+    @Resource
+    private NotificationsMapper notificationsMapper;
+    @Resource
+    private NotificationsService notificationsService;
+    @Resource
+    private PostsService postsService;
 
     /**
      * 读取该学生的所有课程测试

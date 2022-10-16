@@ -18,6 +18,11 @@ import java.util.*;
 /**
  * Service Implementation class of hobbies
  */
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Service
 public class HobbiesServiceImpl extends ServiceImpl<HobbiesMapper, Hobbies> implements HobbiesService {
 

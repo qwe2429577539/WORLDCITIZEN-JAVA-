@@ -6,6 +6,11 @@ import com.example.deco7381.pojo.ChannelPosts;
 import com.example.deco7381.pojo.ChannelTopics;
 import com.example.deco7381.pojo.Student;
 import com.example.deco7381.pojo.vo.GetStudentVo;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.example.deco7381.pojo.ChannelPosts;
+import com.example.deco7381.pojo.ChannelTopics;
+import com.example.deco7381.pojo.Hobbies;
+import com.example.deco7381.pojo.Student;
 import com.example.deco7381.service.ChannelPostsService;
 import com.example.deco7381.service.ChannelTopicsService;
 import com.example.deco7381.service.HobbiesService;
@@ -17,6 +22,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 import java.util.Set;
 
 @Controller

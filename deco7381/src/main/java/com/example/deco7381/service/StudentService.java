@@ -7,6 +7,7 @@ import com.example.deco7381.pojo.UserFriend;
 import com.example.deco7381.pojo.vo.GetStudentVo;
 import com.example.deco7381.pojo.vo.LoginVO;
 import com.example.deco7381.pojo.vo.RegisterRequestVo;
+import com.example.deco7381.pojo.vo.StudentDetailVO;
 import com.example.deco7381.pojo.vo.StudentInfoVo;
 import org.springframework.stereotype.Service;
 

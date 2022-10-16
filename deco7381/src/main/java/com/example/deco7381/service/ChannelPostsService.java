@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * Service of ChannelPosts
  */
+@Service
 public interface ChannelPostsService extends IService<ChannelPosts> {
     /**
      * Get all posts by topic
