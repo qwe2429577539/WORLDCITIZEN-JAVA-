@@ -8,5 +8,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.time.temporal.ChronoField;
 @Mapper
+/**
+ * mapper of course's fields
+ */
 public interface CourseFieldsMapper extends BaseMapper<CourseFields> {
 }

@@ -8,13 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 /**
- * DTO of register request
+ * DTO of student
  */
-public class RegisterRequestVo {
-    private String studentId;
-    private String password;
+public class GetStudentVo {
+    private String name;
     private String country;
     private String email;
-    private String name;
-
+    private String studentId;
+    private String imgSrc;
 }

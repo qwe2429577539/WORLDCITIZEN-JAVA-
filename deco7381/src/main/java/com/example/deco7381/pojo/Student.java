@@ -8,6 +8,9 @@ import java.io.Serializable;
 
 @Data
 @TableName(value = "student")
+/**
+ * Object of Student
+ */
 public class Student implements Serializable {
     private String name;
     @TableField(value = "email")

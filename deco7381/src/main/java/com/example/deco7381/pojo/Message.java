@@ -7,10 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+/**
+ * Object of Message
+ */
 public class Message {
     private String time;
     private String to;
     private String from;
-    private String msg;
+    private String content;
     private String type;
+    private Boolean isRead;
 }

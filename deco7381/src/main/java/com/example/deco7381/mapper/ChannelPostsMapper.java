@@ -1,12 +1,12 @@
 package com.example.deco7381.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.deco7381.pojo.Course;
+import com.example.deco7381.pojo.ChannelPosts;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 /**
- * mapper of courses
+ * mapper of channel's posts
  */
-public interface CourseMapper extends BaseMapper<Course> {
+public interface ChannelPostsMapper extends BaseMapper<ChannelPosts> {
 }

@@ -11,10 +11,11 @@ public enum ResultEnum {
     REGISTER_SUCCESS(1005, "Register was successful"),
     REGISTER_FAILED(1004, "Register has failed"),
     LOGIN_ERROR(1007,"User does not exist");
-
+    //result data
     private Integer code;
+    //result message
     private String message;
-
+    //packaged result object
     ResultEnum(Integer code, String message) {
         this.code = code;
         this.message = message;

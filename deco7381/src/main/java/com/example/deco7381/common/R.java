@@ -14,11 +14,11 @@ public class R {
 
     private Map<String, Object> data = new HashMap<>();
 
-    //把构造方法私有
+    //Make the constructor private
     private R() {
     }
 
-    //成功静态方法
+    //static method successful
     public static R ok() {
         R r = new R();
         r.setSuccess(true);
@@ -26,7 +26,7 @@ public class R {
         return r;
     }
 
-    //失败静态方法
+    //static method failed
     public static R error() {
         R r = new R();
         r.setSuccess(false);
@@ -34,32 +34,33 @@ public class R {
         return r;
     }
 
+    //result enum
     public R resultEnum(ResultEnum resultEnum) {
         this.code(resultEnum.getCode());
         this.message(resultEnum.getMessage());
         return this;
     }
-
+    //success method
     public R success(Boolean success) {
         this.setSuccess(success);
         return this;
     }
-
+    //corresponding message
     public R message(String message) {
         this.setMessage(message);
         return this;
     }
-
+    //corresponding code
     public R code(Integer code) {
         this.setCode(code);
         return this;
     }
-
+    //corresponding data
     public R data(String key, Object value) {
         this.data.put(key, value);
         return this;
     }
-
+    //corresponding data
     public R data(Map<String, Object> map) {
         this.setData(map);
         return this;

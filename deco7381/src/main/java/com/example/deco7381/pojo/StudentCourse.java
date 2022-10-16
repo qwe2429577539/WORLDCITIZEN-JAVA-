@@ -5,6 +5,9 @@ import lombok.Data;
 
 @Data
 @TableName(value = "student_course")
+/**
+ * Object of StudentCourse
+ */
 public class StudentCourse {
     private Long id;
     private String studentId;

@@ -5,8 +5,12 @@ import com.example.deco7381.pojo.Course;
 import com.example.deco7381.pojo.CourseFields;
 
 import java.util.List;
-
+/**
+ * Service of CourseFields
+ */
 public interface CourseFieldsService extends IService<CourseFields> {
+    void deleteCourse(String studentId, String courseId);
+
     /**
      * Get all the course fields
      * @return

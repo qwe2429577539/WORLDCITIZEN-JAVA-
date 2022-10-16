@@ -17,16 +17,16 @@ public class RedisConfig {
     public RedisTemplate<String, Object> redisTemplate(LettuceConnectionFactory redisConnectionFactory) {
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
-        //首先解决key的序列化方式
+        //First, solve the key serialization method
         StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
         redisTemplate.setKeySerializer(stringRedisSerializer);
-        //解决value的序列化方式
+        //Solve the serialization method of value
         Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
-        //序列化时将类的数据类型存入json，以便反序列化的时候转换成正确的类型
+        //Store the data type of the class in json during serialization, so that it can be converted to the correct type during deserialization
         ObjectMapper objectMapper = new ObjectMapper();
         //objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         objectMapper.activateDefaultTyping(LaissezFaireSubTypeValidator.instance, ObjectMapper.DefaultTyping.NON_FINAL);
-        // 解决jackson2无法反序列化LocalDateTime的问题
+        // Solve the problem that jackson2 cannot deserialize LocalDateTime
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.registerModule(new JavaTimeModule());
         jackson2JsonRedisSerializer.setObjectMapper(objectMapper);

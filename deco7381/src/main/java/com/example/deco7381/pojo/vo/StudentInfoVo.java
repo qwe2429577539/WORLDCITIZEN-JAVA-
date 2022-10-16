@@ -7,9 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+/**
+ * DTO of student' information
+ */
 public class StudentInfoVo {
     private String name;
     private String country;
     private String token;
     private String studentId;
+    private String imgSrc;
 }

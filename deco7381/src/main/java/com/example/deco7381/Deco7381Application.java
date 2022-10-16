@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
 @SpringBootApplication
-
+/**
+ * initiator for this application
+ */
 public class Deco7381Application {
 
 	public static void main(String[] args) {

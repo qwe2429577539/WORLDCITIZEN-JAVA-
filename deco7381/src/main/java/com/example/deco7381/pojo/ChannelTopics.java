@@ -4,12 +4,10 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName(value = "course")
+@TableName("channel_topics")
 /**
- * Object of Course
+ * Object of ChannelTopics
  */
-public class Course {
-    private String courseId;
-    private String name;
-
+public class ChannelTopics {
+    private String topic;
 }

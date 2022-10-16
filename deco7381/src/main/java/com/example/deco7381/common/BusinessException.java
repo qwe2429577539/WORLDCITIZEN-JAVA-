@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BusinessException extends RuntimeException{
 
-    //错误码
+    //Failed code
     private Integer code;
-    //错误消息
+    //Failed message
     private String message;
 
     /**
      *
-     * @param message 错误消息
+     * @param message Failed code
      */
     public BusinessException(String message) {
         this.message = message;
@@ -23,8 +23,8 @@ public class BusinessException extends RuntimeException{
 
     /**
      *
-     * @param message 错误消息
-     * @param code 错误码
+     * @param message Failed message
+     * @param code Failed code
      */
     public BusinessException(String message, Integer code) {
         this.message = message;
@@ -33,9 +33,9 @@ public class BusinessException extends RuntimeException{
 
     /**
      *
-     * @param message 错误消息
-     * @param code 错误码
-     * @param cause 原始异常对象
+     * @param message Failed message
+     * @param code Failed code
+     * @param cause Exception object
      */
     public BusinessException(String message, Integer code, Throwable cause) {
         super(cause);
@@ -45,7 +45,7 @@ public class BusinessException extends RuntimeException{
 
     /**
      *
-     * @param resultCodeEnum 接收枚举类型
+     * @param resultCodeEnum Enum Types
      */
     public BusinessException(ResultEnum resultCodeEnum) {
         this.message = resultCodeEnum.getMessage();
@@ -54,8 +54,8 @@ public class BusinessException extends RuntimeException{
 
     /**
      *
-     * @param resultCodeEnum 接收枚举类型
-     * @param cause 原始异常对象
+     * @param resultCodeEnum Enum Types
+     * @param cause Exception object
      */
     public BusinessException(ResultEnum resultCodeEnum, Throwable cause) {
         super(cause);

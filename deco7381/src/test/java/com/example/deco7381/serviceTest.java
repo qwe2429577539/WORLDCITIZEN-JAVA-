@@ -1,24 +1,19 @@
 package com.example.deco7381;
 
 import com.example.deco7381.pojo.Course;
-import com.example.deco7381.pojo.Student;
-import com.example.deco7381.mapper.HobbiesMapper;
 import com.example.deco7381.mapper.StudentCourseMapper;
 import com.example.deco7381.pojo.*;
-import org.junit.runner.RunWith;
-import com.example.deco7381.service.CourseFieldsService;
-import com.example.deco7381.service.CourseService;
-import com.example.deco7381.service.HobbiesService;
-import com.example.deco7381.service.StudentService;
+import com.example.deco7381.pojo.vo.GetStudentVo;
+import com.example.deco7381.service.*;
 
-import com.example.deco7381.service.impl.HobbiesServiceImpl;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.system.ApplicationHome;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class serviceTest {
@@ -32,6 +27,8 @@ public class serviceTest {
     private CourseFieldsService courseFieldsService;
     @Resource
     private StudentCourseMapper studentCourseMapper;
+    @Resource
+    private ChannelPostsService channelPostsService;
 
     /**
      * 读取该学生的所有课程测试
@@ -57,7 +54,7 @@ public class serviceTest {
     @Test
     public void test3() {
         List<String> students = courseService.getStudentList("DECO7381");
-        List<Student> studentInfo = courseService.getStudentInfo(students);
+        List<GetStudentVo> studentInfo = courseService.getStudentInfo(students);
         studentInfo.forEach(System.out::println);
     }
     @Test
@@ -81,7 +78,8 @@ public class serviceTest {
      */
     @Test
     public void test5() {
-        List<UserFriend> friends = studentService.getFriends("46725807");
+        List<String> friends = studentService.getFriends("46725806");
+        System.out.println(friends);
     }
 
     /**
@@ -106,5 +104,50 @@ public class serviceTest {
      */
     public void test8() {
         courseFieldsService.addCourse("46725806","DECO7381");
+    }
+    @Test
+    public void test10(){
+        courseFieldsService.addCourse("46725806","CSSE1001");
+    }
+
+    @Test
+    public void test11(){
+        hobbiesService.addHobbies("46725807","Novel");
+    }
+
+    @Test
+    public void test12(){
+        hobbiesService.deleteHobby("46725806","Sport");
+    }
+
+    @Test
+    public void test13(){
+        HashMap<String, Set<GetStudentVo>> randomFriends = hobbiesService.getRandomFriends("46725806");
+        System.out.println(randomFriends);
+    }
+    @Test
+    public void test14(){
+        channelPostsService.addPost("46725807","DailyLife","I haven't played basketball for a long time. Can someone play basketball with me?");
+    }
+
+    @Test
+    public void test15(){
+        List<ChannelPosts> dailyLife = channelPostsService.getAllPosts("DailyLife");
+        System.out.println(dailyLife);
+    }
+    @Test
+    public void test16(){
+        studentService.deleteFriend("46725806","46725809");
+    }
+
+    @Test
+    public void test17(){
+        String property ="file:"+System.getProperty("user.dir")+"\\src\\main\\resources\\static\\img\\";
+        String path=property.replaceAll("\\\\","/");
+        String test="file:D:/deco7381/deco7381/src/main/resources/static/img/";
+        System.out.println(test);
+        System.out.println(path);
+
+
     }
 }

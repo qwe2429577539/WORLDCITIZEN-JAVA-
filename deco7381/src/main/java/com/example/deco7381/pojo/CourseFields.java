@@ -6,6 +6,9 @@ import lombok.Data;
 
 @Data
 @TableName(value = "course_fields")
+/**
+ * Object of CourseFields
+ */
 public class CourseFields {
     @TableField(value = "field_name")
     private String fieldName;

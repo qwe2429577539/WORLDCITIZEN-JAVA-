@@ -8,8 +8,8 @@ import org.springframework.util.StringUtils;
 public class Assert {
 
     /**
-     * 断言对象不为空
-     * obj 为空则抛异常
+     * Assert the object is not null
+     * If the object is null then throw Exception
      * @param obj
      * @param responseEnum
      */
@@ -22,8 +22,8 @@ public class Assert {
 
 
     /**
-     * 断言对象为空
-     * 如果对象obj不为空，则抛出异常
+     * Assert the object is null
+     * If the object is not null then throw Exception
      * @param object
      * @param responseEnum
      */
@@ -35,10 +35,10 @@ public class Assert {
     }
 
     /**
-     * 断言表达式为真
-     * 如果不为真，则抛出异常
+     * Assert the expression is ture
+     * if it's not true, then throw Exception
      *
-     * @param expression 是否成功
+     * @param expression
      */
     public static void isTrue(boolean expression, ResultEnum responseEnum) {
         if (!expression) {
@@ -48,8 +48,8 @@ public class Assert {
     }
 
     /**
-     * 断言两个对象不相等
-     * 如果相等，则抛出异常
+     * Assert the two obj are not equivalent
+     * if it's equivalent then throw Exception
      * @param m1
      * @param m2
      * @param responseEnum
@@ -62,8 +62,8 @@ public class Assert {
     }
 
     /**
-     * 断言两个对象相等
-     * 如果不相等，则抛出异常
+     * Assert the two obj are equivalent
+     * if it's not equivalent then throw Exception
      * @param m1
      * @param m2
      * @param responseEnum
@@ -76,8 +76,8 @@ public class Assert {
     }
 
     /**
-     * 断言参数不为空
-     * 如果为空，则抛出异常
+     * Assert the parameter are empty
+     * if it's not empty then throw Exception
      * @param s
      * @param responseEnum
      */
